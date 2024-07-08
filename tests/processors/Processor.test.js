@@ -1,8 +1,8 @@
 const Processor = require("../../processors/Processor");
 
 describe("processLine", () => {
-  const processor = new Processor(3, "mock.txt");
   it("processes an individual line correctly", () => {
+    const processor = new Processor(3, "mock.txt");
     const line = "This is 'just' a test!";
     const expectedTokens = ["this", "is", "just", "a", "test"];
 
@@ -12,6 +12,8 @@ describe("processLine", () => {
   });
 
   it("respects hyphenated words as single tokens", () => {
+    const processor = new Processor(3, "mock.txt");
+
     const line = "This test is well-planned!";
     const expectedTokens = ["this", "test", "is", "well-planned"];
 
@@ -21,6 +23,7 @@ describe("processLine", () => {
   });
 
   it("respects contractions as single tokens", () => {
+    const processor = new Processor(3, "mock.txt");
     const line = "Don't worry - it's a test!";
     const expectedTokens = ["don't", "worry", "it's", "a", "test"];
 
@@ -30,6 +33,8 @@ describe("processLine", () => {
   });
 
   it("handles unicode characters", () => {
+    const processor = new Processor(3, "mock.txt");
+
     const line =
       "Die Kirschen in Nachbars Garten schmecken immer ein bisschen süßer.";
     const expectedTokens = [
@@ -48,8 +53,6 @@ describe("processLine", () => {
 
     expect(tokens).toEqual(expectedTokens);
   });
-
-  // empty lines
 });
 
 describe("extractSequences", () => {

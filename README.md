@@ -42,16 +42,15 @@ Running all tests:
 I think the main things I would do next if given more time are:
 
 1. More error handling
-   - For example, currently, the application requires you to provide a valid file path. With some more time, I would have liked to handle that more gracefully and provide a better response for invalid inputs.
+   - I would spend some more time improving the error handling throughout the program.
+   - For example, currently, the application requires you to provide a valid file path. With some more time, I would have liked to handle that more gracefully and provide a better response for invalid inputs
 2. More robust unit tests
    - I included some tests from the ReportGenerator, Processor, and FileProcessor. I also included a very basic test for the index file. Ideally I would like to also have tests for StdinProcessor and more tests for index. I think overall spending somre more time covering edge cases for unit tests for all files would be a good next step.
-   - I would also look into resolving the jest log that shows up when you run all tests.
+   - I would also want look into resolving the jest log that shows up when you run all tests.
 3. Variable sequence lengths
    - The processors are set up to be able to find sequences of a variable length. Right now, I'm using a constant value of 3 (SEQUENCE_LENGTH). With more time, I'd like to allow the user to specify what length of sequences they're interested in.
 4. Variable report lengths
-   -The report generator is also set up to accept length argument. Right now, it is being passed a constant REPORT_LENGTH. With more time, I think it would be nice to allow different length of reports to be selected.
+   - The report generator is also set up to accept length argument. Right now, it is being passed a constant REPORT_LENGTH. With more time, I think it would be nice to allow different length of reports to be selected.
 5. Report styles
-
-- Right now the reports are just printing to the console. The ReportGenerator could be switched out for different ones that print in a different format or print to file, etc
-
+   - Right now the reports are just printing to the console. The ReportGenerator could be switched out for different ones that print in a different format or print to file, etc
 6. Look into additional performance improvements
